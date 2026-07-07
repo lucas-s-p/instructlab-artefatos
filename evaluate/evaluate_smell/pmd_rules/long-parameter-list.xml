@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="LongParameterList-Custom"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                        https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Custom rule for Long Parameter List with threshold=4.
+    </description>
+
+    <rule ref="category/java/design.xml/ExcessiveParameterList">
+        <properties>
+            <!-- Methods with 4 or more parameters are flagged as LPL. -->
+            <property name="minimum" value="4"/>
+        </properties>
+    </rule>
+
+</ruleset>

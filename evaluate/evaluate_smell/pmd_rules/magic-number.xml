@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ruleset name="Magic Number Custom"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                             https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+  <description>Detects non-idiomatic numeric literals within IF conditions.</description>
+
+  <rule name="AvoidLiteralsInIfConditionCustom"
+        language="java"
+        message="Magic number detected inside an IF statement! Replace with a constant."
+        class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+    <description>
+      Captures literal numbers in IFs that are greater than 2 or less than -1,
+      avoiding false positives with idiomatic checks (0, 1, 2, -1).
+    </description>
+    <priority>3</priority>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+          //IfStatement//NumericLiteral[number(@Image) > 2 or number(@Image) < -1]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+</ruleset>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="Improper Naming"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                             https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+  <description>
+    Detects Java naming convention violations.
+    Classes must start with uppercase; methods and fields with lowercase.
+    Used by smell_eval Layer 4 to measure Improper Naming removal.
+  </description>
+
+  <!-- Class names must start with uppercase letter -->
+  <rule ref="category/java/codestyle.xml/ClassNamingConventions"/>
+
+  <!-- Method names must start with lowercase letter -->
+  <rule ref="category/java/codestyle.xml/MethodNamingConventions"/>
+
+  <!-- Field names must start with lowercase (non-static) -->
+  <rule ref="category/java/codestyle.xml/FieldNamingConventions"/>
+</ruleset>

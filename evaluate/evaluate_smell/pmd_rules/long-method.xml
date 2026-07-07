@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset name="Long Method"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                             https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+    <description>
+        Long Method: threshold=12 NCSS statements per method.
+        NcssCount only counts executable statements (not braces, comments, or imports), making it more robust than raw LOC.
+    </description>
+
+    <rule ref="category/java/design.xml/NcssCount">
+        <properties>
+            <property name="methodReportLevel" value="12"/>
+            <property name="classReportLevel"  value="500"/>
+        </properties>
+    </rule>
+</ruleset>
