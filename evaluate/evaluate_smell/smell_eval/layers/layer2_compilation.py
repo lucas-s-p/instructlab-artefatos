@@ -25,10 +25,7 @@ from typing import Optional
 from smell_eval.config import LayerResult
 from smell_eval.code_extractor import extract_java_code
 
-# Timeout de compilação. Saídas degeneradas (geração sem parar, concatenação
-# de strings profundamente aninhada, etc.) podem fazer o javac travar por
-# muito mais que alguns segundos — 600s (10min) dá margem confortável antes
-# de descartar o caso como falha de compilação.
+# Timeout de compilação.
 _JAVAC_TIMEOUT_SECONDS = 600
 
 # Wrapper com imports e stubs de domínio para compilação isolada de trechos

@@ -91,10 +91,6 @@ smell_eval/
 | L4 | SRR via PMD | Smell removido segundo regra PMD calibrada | 
 | L5 | pass@k (k=1,3,5) | Corretude com múltiplas tentativas | 
 
-
-## Dataset embutido
-
-
 ---
 
 

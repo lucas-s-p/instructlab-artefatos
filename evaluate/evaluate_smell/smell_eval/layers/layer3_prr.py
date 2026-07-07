@@ -14,11 +14,6 @@ PRR = 1.0 : todos os parâmetros encapsulados (0 parâmetros restantes)
 PRR = 0.5 : metade dos parâmetros foi encapsulada
 PRR = 0.0 : nenhuma mudança
 PRR < 0   : o modelo adicionou parâmetros (regressão)
-
-Referências:
-  Palomba et al. (2018) "Detecting Bad Smells in Source Code using Change
-  History Information". TOSEM.
-  Tsantalis et al. (2022) RefactoringMiner 2.0. IEEE TSE.
 """
 
 import re

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-parse_eval_log.py
-Lê o arquivo de log de avaliação (copia_eval.log ou evaluate.log) e calcula:
+Lê o arquivo de log de avaliação e calcula:
   - Médias por smell (L1-BLEU, L2-Compilation, L3-PRR, L4-SRR, L5-pass@1, L5-pass@5)
   - Média geral de todos os casos
 
@@ -17,7 +16,7 @@ import sys
 import json
 from collections import defaultdict
 
-# ─── Config ──────────────────────────────────────────────────────────────────
+# Config 
 
 SMELLS = [
     "Long Parameter List",
@@ -33,10 +32,8 @@ SMELLS = [
 
 LOG_FILE = sys.argv[1] if len(sys.argv) > 1 else "evaluate.log"
 
-# ─── Regex patterns ───────────────────────────────────────────────────────────
-
-# Linha com métricas L1-L4:
-# → L1 bleu  base=0.5379 ft=0.5880 | L2 compilation base=1.0000 ft=1.0000 | ...
+# Regex patterns
+# Linha com métricas L1-L4
 RE_L1_L4 = re.compile(
     r"L1 bleu\s+base=([\d.]+|N/A)\s+ft=([\d.]+|N/A)"
     r".*?L2 compilation\s+base=([\d.]+|N/A)\s+ft=([\d.]+|N/A)"
@@ -45,20 +42,18 @@ RE_L1_L4 = re.compile(
     re.IGNORECASE,
 )
 
-# Linha com métricas L5:
-# L5 pass@1 base=0.2000 ft=1.0000 | pass@5 base=1.0000 ft=1.0000
+# Linha com métricas L5
 RE_L5 = re.compile(
     r"L5 pass@1\s+base=([\d.]+|N/A)\s+ft=([\d.]+|N/A)"
     r".*?pass@5\s+base=([\d.]+|N/A)\s+ft=([\d.]+|N/A)",
     re.IGNORECASE,
 )
 
-# Cabeçalho de caso:
-# [case 1/36] Long Parameter List: Long Parameter List (case 1 of 2)
+# Cabeçalho de caso
 RE_CASE = re.compile(r"\[case\s+\d+/\d+\]\s+(.+?):", re.IGNORECASE)
 
 
-# ─── Helpers ─────────────────────────────────────────────────────────────────
+# Helpers
 
 def to_float(s):
     """Converte string para float, retorna None se 'N/A'."""
@@ -71,7 +66,7 @@ def avg(lst):
     return round(sum(vals) / len(vals), 4) if vals else None
 
 
-# ─── Parse ───────────────────────────────────────────────────────────────────
+# Parse
 
 def parse_log(path):
     """
@@ -156,7 +151,7 @@ def parse_log(path):
     return results
 
 
-# ─── Aggregation ─────────────────────────────────────────────────────────────
+# Aggregation
 
 METRICS = ["L1", "L2", "L3", "L4", "pass@1", "pass@5"]
 
@@ -201,7 +196,7 @@ def aggregate(results):
     return summary
 
 
-# ─── Display ─────────────────────────────────────────────────────────────────
+# Display
 
 def print_table(summary):
     header = f"{'Smell':<22} {'N':>3}  " + "  ".join(
@@ -233,7 +228,7 @@ def print_table(summary):
     print("=" * len(header))
 
 
-# ─── Main ─────────────────────────────────────────────────────────────────────
+# Main
 
 def main():
     print(f"[parse_eval_log] Lendo: {LOG_FILE}")
