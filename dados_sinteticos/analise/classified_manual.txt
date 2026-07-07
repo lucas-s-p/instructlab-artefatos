@@ -1,0 +1,46 @@
+Total de instâncias: 1440
+
+SMELL                           COUNT
+-------------------------------------
+LONG METHOD                       313
+DUPLICATE CODE                    238
+FEATURE ENVY                      153
+PRIMITIVE OBSESSION               136
+LOOP                              106              |LOOPING AND CONDITIONAL COMPLEXITY, LOOP WITH MULTIPLE RESPONSIBILITIES, IMPERATIVE LOOP, LOOP FOR ACCUMULATION, ...|
+ENCAPSULATION VIOLATION            90              |LACK OF ENCAPSULATION, ENCAPSULATION BREAKDOWN, POOR ENCAPSULATION, LEAKY ENCAPSULATION, ...|
+MAGIC NUMBER                       77
+CONDITIONAL COMPLEXITY             74              |COMPLEX BOOLEAN EXPRESSION, REDUNDANT CONDITIONAL STATEMENT, REDUNDANT CONDITIONAL LOGIC, ...|
+SINGLE RESPONSIBILITY PRINCIPLE    63
+TEMPORARY FIELD                    43
+DATA CLASS                         38
+DATA CLUMP                         30
+IMPROPER NAMING                    30
+INAPPROPRIATE INTIMACY             27
+LARGE CLASS                        24
+LONG PARAMETER LIST                23
+SWITCH STATEMENT                   23
+MAGIC STRING                       21
+VALIDATION/NULL/EXCEPTION          18         
+MESSAGE CHAINS                     17
+GOD CLASS                          17
+COMMENTS                           12
+LAZY CLASS                         10
+DIVERGENT CHANGE                    9
+MIDDLE MAN                          8
+RAW TYPE                            6
+STRING CONCATENATION                6
+COLLAPSING HIERARCHY                5
+INAPPROPRIATE INHERITANCE           5
+LAZY INITIALIZATION                 5
+REFUSED BEQUEST                     5
+SPECULATIVE GENERALITY              4
+SHOTGUN SURGERY                     3
+RESOURCE MANAGEMENT                 3
+STRING CONCATENATION IN LOOPS       1
+STRING CONCATENATION                1
+SHARED MUTABLE STATE                1
+GLOBAL MUTABLE STATE                1
+LACK OF IMMUTABILITY                1
+
+TOTAL -------------------------- 1647
+NO SMELL ----------------------- 28  (ÚNICO)
