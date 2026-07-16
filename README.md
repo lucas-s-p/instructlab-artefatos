@@ -4,7 +4,7 @@ Este repositório reúne os artefatos produzidos durante os experimentos de espe
 
 ## Estrutura do repositório
 
-### `dados_sinteticos`
+### `synthetic_data`
 
 Contém o conjunto de dados sintéticos gerado com o **InstructLab**, utilizando o modelo professor **GPT-4o**. Ao todo, foram geradas **1.440 instâncias**, com o objetivo de ensinar os modelos a identificar e refatorar trechos de código Java contendo *code smells*.
 
@@ -18,3 +18,6 @@ Contém a ferramenta de avaliação desenvolvida para os experimentos. A ferrame
 - **Pass@k:** estima a probabilidade de o modelo gerar pelo menos uma refatoração correta em *k* tentativas.
 
 Em conjunto, essas métricas fornecem uma avaliação consistente do desempenho dos modelos especializados.
+
+### `results`
+Contém os resultados da avaliação realizada usando a ferramenta de **evaluate**.
